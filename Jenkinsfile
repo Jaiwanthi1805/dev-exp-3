@@ -9,12 +9,14 @@ pipeline {
             }
         }
 
+        
         stage('Test') {
             steps {
-                bat 'if not exist index.html exit /b 1'
+                bat 'if not exist missing.html exit /b 1'
                 echo 'HTML file exists - Test passed'
             }
         }
+
 
         stage('Build') {
             steps {
